@@ -20,7 +20,7 @@ public class Album {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String titleName, String title) {
         this.title = title;
     }
 
