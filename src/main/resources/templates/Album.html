@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet"  th:href="@{}" />
+<!--    <link rel="stylesheet"  th:href="@{}" />-->
 </head>
 <body>
-<form action="#" th:action="@{/Album}" method="post" th:object="${album}">
+<form action="#" th:action="@{/Album}" th:object="${albums}"method="post">
     <label>Album Title:</label>
-    <input type="text" name="title" th:field="*{title}" required/>
+    <input type="text" name="title"  required/>
     <label>Artist:</label>
-    <input type="text" name="artist" th:field="*{artist}" required/>
+    <input type="text" name="artist" required/>
     <label>Song Count:</label>
-    <input type="number" name="songCount" th:field="*{songCount}" required />
+    <input type="number" name="songCount"  required />
     <label>Length:</label>
-    <input type="number" name="length" th:field="*{length}" required/>
+    <input type="number" name="length" required/>
     <label>Image URL:</label>
-    <input type="text" name="imageUrl" th:field="*{imageUrl}" required />
+    <input type="text" name="imageUrl"  required />
+    <input type="submit" value="Submit"/>
 </form>
+
 <h2> List Of Albums</h2>
 <div class="albums-list">
     <ul th:each="album : ${albums}">
         <li>Title: <span th:text="${album.title}"></span></li>
         <li th:text="'Artist: ' + ${album.artist}"></li>
-        <li th:text="'SongCount:' " + ${album.songCount}"></li>
+        <li th:text="'SongCount:' + ${album.songCount}"></li>
         <li th:text="'Length:' + ${album.length} + ' s'"></li>
         <img th:src="${album.imageUrl}" class="image-album"/>
     </ul>
