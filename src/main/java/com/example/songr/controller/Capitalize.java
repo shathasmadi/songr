@@ -10,7 +10,7 @@ import java.util.Locale;
 @Controller
 public class Capitalize {
         @GetMapping("/Capitalize/{text}")
-        public static String CapitalizeController(@PathVariable(value="text") String text , Model modelOne) {
+        public String CapitalizeController(@PathVariable(value="text") String text , Model modelOne) {
            modelOne.addAttribute("upper",text.toUpperCase());
             return "Capitalize";
         }

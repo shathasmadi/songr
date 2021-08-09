@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet"  th:href="@{}" />
+    <link rel="stylesheet"  th:href="@{static/album.css}" />
 </head>
 <body>
+<!--<form action="#" th:action="@{/Album}" method="post" th:object="${album}">-->
+<!--    <label>Album Title:</label>-->
+<!--    <input type="text" name="title" th:field="*{title}" required/>-->
+<!--    <label>Artist:</label>-->
+<!--    <input type="text" name="artist" th:field="*{artist}" required/>-->
+<!--    <label>Song Count:</label>-->
+<!--    <input type="number" name="songCount" th:field="*{songCount}" required />-->
+<!--    <label>Length:</label>-->
+<!--    <input type="number" name="length" th:field="*{length}" required/>-->
+<!--    <label>Image URL:</label>-->
+<!--    <input type="text" name="imageUrl" th:field="*{imageUrl}" required />-->
+<!--</form>-->
+
 <h2> List Of Albums</h2>
 <div class="albums-list">
     <ul th:each="album : ${albums}">
         <li>Title: <span th:text="${album.title}"></span></li>
         <li th:text="'Artist: ' + ${album.artist}"></li>
-        <li th:text="'SongCount:' " + ${album.songCount}"></li>
+        <li th:text="'SongCount:'  + ${album.songCount}"></li>
         <li th:text="'Length:' + ${album.length} + ' s'"></li>
         <img th:src="${album.imageUrl}" class="image-album"/>
     </ul>
 </div>
+
 </body>
 </html>
