@@ -13,7 +13,8 @@ public class AlbumTest {
 
        test.setImageUrl("image");
        assertEquals("image",test.getImageUrl());
-
+       test.setTitle("title Name");
+       assertEquals("title Name",test.getTitle());
 
     }
 }
