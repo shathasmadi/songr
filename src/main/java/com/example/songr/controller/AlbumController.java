@@ -12,8 +12,10 @@ import org.springframework.web.servlet.view.RedirectView;
 
 
 
+
 @Controller
 public class AlbumController {
+
       @Autowired
       AlbumRepository albumRepository;
 

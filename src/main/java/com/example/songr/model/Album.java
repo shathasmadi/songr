@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Album {
    private  String title;
@@ -27,11 +28,16 @@ public class Album {
     }
 
 
+//    public Album() {
+//
+//    }
+
+
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String titleName, String title) {
+    public void setTitle( String title) {
         this.title = title;
     }
 
@@ -74,4 +80,5 @@ public class Album {
     public void setId(int id) {
         this.id = id;
     }
+
 }
