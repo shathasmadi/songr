@@ -3,38 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
-<!--    <link rel="stylesheet"  th:href="@{}" />-->
 </head>
-
 <body>
 
-<form action="#" th:action="@{/Album}" th:object="${albums}"method="post">
+<form action="#" th:action="'/newsong/'+ ${album.id}" th:object="${songs}" method="post">
     <label>Album Title:</label>
     <input type="text" name="title"  required/>
-    <label>Artist:</label>
-    <input type="text" name="artist" required/>
-    <label>Song Count:</label>
-    <input type="number" name="songCount"  required />
     <label>Length:</label>
-    <input type="number" name="length" required/>
-    <label>Image URL:</label>
-    <input type="text" name="imageUrl"  required />
+    <input type="text" name="length" required/>
+    <label>Track Number:</label>
+    <input type="number" name="trackNumber"  required />
     <input type="submit" value="Submit"/>
 </form>
 
-<h2> List Of Albums</h2>
 <div class="albums-list">
-    <ul th:each="album : ${albums}">
+    <ul>
         <li>Title: <span th:text="${album.title}"></span></li>
         <li th:text="'Artist: ' + ${album.artist}"></li>
         <li th:text="'SongCount:' + ${album.songCount}"></li>
         <li th:text="'Length:' + ${album.length} + 's'"></li>
         <img th:src="${album.imageUrl}" class="image-album"/>
-        <a th:href="'/Album/'+ ${album.id}">Show Album's Songs</a>
     </ul>
 </div>
-
+<div th:each="song:${album.songs}">
+    <p th:text="'Title: '+${song.title}"></p>
+    <p th:text="'Length: '+${song.length}"></p>
+    <p th:text="'Track Number: '+${song.trackNumber}"></p>
+</div>
 </body>
-
 </html>

@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.view.RedirectView;
 
 
-
-
-
 @Controller
 public class AlbumController {
 
@@ -35,4 +32,5 @@ public class AlbumController {
        albumRepository.save(album);
        return new RedirectView("/Album");
 }
+
 }
