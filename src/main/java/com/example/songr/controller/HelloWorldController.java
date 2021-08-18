@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HelloWorldController {
-    @GetMapping("/HelloWorld")
+    @GetMapping("/helloWorld")
     public String HelloWorld() {
 
-        return "HelloWorld";
+        return "helloWorld";
     }
 
 

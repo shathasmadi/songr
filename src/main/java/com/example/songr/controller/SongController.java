@@ -22,15 +22,15 @@ public class SongController {
     SongRepository songRepository;
 
 
-    @GetMapping("/Album/{id}")
+    @GetMapping("/album/{id}")
     public String songs(@PathVariable("id") int id, Model modelOne) {
 
         modelOne.addAttribute("album",albumRepository.findById(id).get());
 
-        return "Song";
+        return "song";
     }
 
-    @GetMapping("/Song")
+    @GetMapping("/song")
     public String songs( Model modelOne) {
 
         modelOne.addAttribute("songs",songRepository.findAll());
@@ -44,7 +44,7 @@ public class SongController {
         Song song= new Song(data.get("title").get(0), data.get("length").get(0), data.get("trackNumber").get(0));
         song.setAlbum(albumRepository.findById(id).get());
         songRepository.save(song);
-        return new RedirectView ("/Album/{id}");
+        return new RedirectView ("/album/{id}");
     }
 
 
